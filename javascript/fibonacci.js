@@ -1,5 +1,17 @@
 function fibonacci(num) {
   // type your code here
+  const fibonacci = [0,1];
+  if (num>=0&&num<2) {
+    return fibonacci[num];
+  }
+  for (let i=2;i<=num;i++) {
+    let nextNum = fibonacci[i-2]+fibonacci[i-1];
+    if (i===num) {
+      return nextNum;
+    } else {
+      fibonacci.push(nextNum);
+    }
+  }
 }
 
 if (require.main === module) {
